@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no" />
+<title>Viewport</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0 auto;
+  width: 320px;
+}
+.box {
+  padding: 10px 0;
+  text-align: center;
+}
+#output {
+  color: #336699;
+  font-size: 100px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="">Viewport width</div>
+<div id="output"></div>
+</div>
+<script>
+window.onresize = function (e) {
+  showViewportWidth();
+};
+window.onload = function (e) {
+  showViewportWidth();
+};
+var showViewportWidth = function () {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  document.getElementById('output').innerHTML = w;
+};
+</script>
+</body>
+</html>
